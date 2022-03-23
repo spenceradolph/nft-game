@@ -1,0 +1,8 @@
+{
+	"name": "nft-game",
+	"dockerComposeFile": ["./docker-compose.dev.yml"],
+	"service": "nft-game-server-dev",
+	"workspaceFolder": "/app",
+	"shutdownAction": "stopCompose",
+	"extensions": ["esbenp.prettier-vscode"]
+}

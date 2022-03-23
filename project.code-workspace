@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"name": "Client",
+			"path": "packages/react-client"
+		},
+		{
+			"name": "Server",
+			"path": "packages/express-server"
+		},
+		{
+			"name": "Database",
+			"path": "packages/mysql-database"
+		}
+	]
+}
