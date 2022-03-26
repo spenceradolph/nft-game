@@ -8,6 +8,7 @@
 		"server:start": "node ./dist/index.js"
 	},
 	"dependencies": {
+		"@nft-game/mysql-database": "1.0.0",
 		"express": "^4.17.3"
 	},
 	"devDependencies": {

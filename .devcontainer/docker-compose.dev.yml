@@ -1,18 +1,30 @@
-version: "3.8"
+version: '3.8'
 
 services:
-  nft-game-server-dev:
-    container_name: nft-game-server-dev
-    build:
-      context: ../
-      dockerfile: Dockerfile
-      target: development-stage
-    env_file: ../.env
-    volumes:
-      - ../:/app:cached
-    command: tail -f /dev/null
-  
-  nft-game-database-dev:
-    container_name: nft-game-database-dev
-    image: mysql
-    env_file: ../.env
+    nft-game-server-dev:
+        container_name: nft-game-server-dev
+        build:
+            context: ../
+            dockerfile: Dockerfile
+            target: development-stage
+        env_file: ../.env
+        volumes:
+            - ../:/app:cached
+            - exclude_root:/app/node_modules
+            - exclude_database:/app/packages/mysql-database/node_modules
+            - exclude_server:/app/packages/express-server/node_modules
+            - exclude_client:/app/packages/react-client/node_modules
+
+        command: tail -f /dev/null
+
+    nft-game-database-dev:
+        container_name: nft-game-database-dev
+        image: mysql
+        env_file: ../.env
+
+volumes:
+    mysqldata:
+    exclude_root:
+    exclude_client:
+    exclude_server:
+    exclude_database:
